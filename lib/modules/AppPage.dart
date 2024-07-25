@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/layouts/customBottomNavBar.dart';
 import 'package:flutter/material.dart';
 
 class AppPage extends StatelessWidget {
@@ -5,6 +6,8 @@ class AppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      bottomNavigationBar: customBottomNavBar(),
+    );
   }
 }
