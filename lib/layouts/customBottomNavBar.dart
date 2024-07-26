@@ -58,7 +58,7 @@ class itemBottomNav extends StatelessWidget {
           Text(
             title,
             style: textStyle
-                .reqular_12(context: context)
+                .regular_12(context: context)
                 .copyWith(color: isActive ? myColor.activeColor : null),
           )
         ],

@@ -28,8 +28,10 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
   device_preview: ^1.2.0
+  dio: ^5.5.0+1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
@@ -76,9 +78,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
 flutter_assets:
   assets_path: assets/images
   output_path: lib/shared/
   filename: imagePath.dart
-  field_prefix:
+  field_prefix: null
