@@ -8,9 +8,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(DevicePreview(
-    builder: (context) => const MyApp(),
-    enabled: !kReleaseMode,
-  ));
+      builder: (context) => const MyApp(), enabled: !kReleaseMode));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightTheme(),
-      home:  AppPage(),
+      home: AppPage(),
     );
   }
 }

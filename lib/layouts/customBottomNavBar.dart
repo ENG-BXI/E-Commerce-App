@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, camel_case_types
+
 import 'package:e_commerce_app/shared/constant.dart';
 import 'package:e_commerce_app/shared/imagePath.dart';
 import 'package:e_commerce_app/shared/textStyle.dart';
@@ -16,12 +18,12 @@ class customBottomNavBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            itemButtomNav(imagePath: Assets.imagesHomeIconNav, title: "Feed"),
-            itemButtomNav(
+            itemBottomNav(imagePath: Assets.imagesHomeIconNav, title: "Feed"),
+            itemBottomNav(
                 imagePath: Assets.imagesMarketIconNav,
                 title: "Market",
                 isActive: true),
-            itemButtomNav(
+            itemBottomNav(
                 imagePath: Assets.imagesProfileIconNav, title: "Profile"),
           ],
         ),
@@ -30,8 +32,8 @@ class customBottomNavBar extends StatelessWidget {
   }
 }
 
-class itemButtomNav extends StatelessWidget {
-  itemButtomNav(
+class itemBottomNav extends StatelessWidget {
+  itemBottomNav(
       {super.key,
       required this.imagePath,
       required this.title,
@@ -43,6 +45,7 @@ class itemButtomNav extends StatelessWidget {
     return MaterialButton(
       onPressed: () {},
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset(
             imagePath,

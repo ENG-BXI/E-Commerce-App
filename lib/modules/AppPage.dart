@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, camel_case_types
+
 import 'package:e_commerce_app/layouts/customBottomNavBar.dart';
 import 'package:e_commerce_app/shared/textStyle.dart';
 import 'package:flutter/material.dart';
@@ -66,9 +68,10 @@ class AppPage extends StatelessWidget {
               const SizedBox(height: 24),
               Container(height: 196, color: Colors.red),
               const SizedBox(height: 24),
-              subtitleAndIconBack(title: "New stores",fun: () {
-                
-              },),
+              subtitleAndIconBack(
+                title: "New stores",
+                fun: () {},
+              ),
               const SizedBox(height: 8),
               SizedBox(
                 height: 128 + 12 + 52,
@@ -107,15 +110,18 @@ class AppPage extends StatelessWidget {
                   },
                   separatorBuilder: (context, index) {
                     return const SizedBox(
-                      width: 8  ,
+                      width: 8,
                     );
                   },
                 ),
               ),
-              const SizedBox(height: 24,),
-                subtitleAndIconBack(title: "Products on sale",fun: () {
-                
-              },),
+              const SizedBox(
+                height: 24,
+              ),
+              subtitleAndIconBack(
+                title: "Products on sale",
+                fun: () {},
+              ),
             ],
           ),
         ),
@@ -125,9 +131,7 @@ class AppPage extends StatelessWidget {
 }
 
 class subtitleAndIconBack extends StatelessWidget {
-   subtitleAndIconBack({
-    super.key,required this.title,required this.fun
-  });
+  subtitleAndIconBack({super.key, required this.title, required this.fun});
   String title;
   VoidCallback fun;
 

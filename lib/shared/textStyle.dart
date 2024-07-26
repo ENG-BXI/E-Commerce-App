@@ -13,4 +13,5 @@ class textStyle {
       fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500);
   static TextStyle reqular_14({required BuildContext context}) => const TextStyle(
       fontSize: 14, color: Colors.black, fontWeight: FontWeight.w400);
+      
 }
