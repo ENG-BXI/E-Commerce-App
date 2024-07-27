@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:e_commerce_app/models/NavigatorTItleAndLIstProductModel.dart';
 import 'package:e_commerce_app/models/productModel.dart';
 import 'package:e_commerce_app/shared/constant.dart';
