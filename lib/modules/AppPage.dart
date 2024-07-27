@@ -23,7 +23,7 @@ class AppPage extends StatelessWidget {
     myCubit.getCategory(lang: "ar");
     myCubit.getBannerImage();
     BlocProvider.of<NewProductCubit>(context).getAllProduct(lang: "en");
-    return const Scaffold(
+    return const Scaffold(backgroundColor: Colors.white,
       bottomNavigationBar: customBottomNavBar(),
       body: HomePage(),
     );
