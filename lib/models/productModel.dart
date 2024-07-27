@@ -1,4 +1,4 @@
-class Productmodel {
+class ProductModel {
   late int id;
   late double price;
   late double oldPrice;
@@ -10,7 +10,7 @@ class Productmodel {
   late bool inFavorites;
   late bool inCart;
 
-  Productmodel(
+  ProductModel(
       {required this.id,
       required this.price,
       required this.oldPrice,
@@ -22,7 +22,7 @@ class Productmodel {
       required this.inFavorites,
       required this.inCart});
 
-  Productmodel.fromJson(Map<String, dynamic> json) {
+  ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     price = double.parse(json['price'].toString());
     oldPrice = double.parse(json['old_price'].toString()) ;

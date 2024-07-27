@@ -1,5 +1,8 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:e_commerce_app/cubit/ecommerce_app_cubit.dart';
+import 'package:e_commerce_app/Cubit/cubit_Ecommerce/ecommerce_app_cubit.dart';
+import 'package:e_commerce_app/Cubit/cubit_newProduct/new_product_cubit.dart';
+import 'package:e_commerce_app/modules/HomePage.dart';
+import 'package:e_commerce_app/modules/viewProductPage.dart';
 import 'package:e_commerce_app/shared/dioHelper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +11,8 @@ import './modules/AppPage.dart';
 
 import './shared/theme.dart';
 import 'package:flutter/material.dart';
+
+import 'shared/Routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,12 +29,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: Routes_StringPath.appPage,
+      routes: routes, 
       debugShowCheckedModeBanner: false,
       theme: lightTheme(),
-      home: BlocProvider(
-        create: (context) => EcommerceAppCubit(),
-        child: AppPage(),
-      ),
     );
   }
 }
+
+/*
+ MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => EcommerceAppCubit(),
+          ),
+          BlocProvider(
+            create: (context) => NewProductCubit(),
+          ),
+        ],
+        child: AppPage(),
+      ),
+*/
