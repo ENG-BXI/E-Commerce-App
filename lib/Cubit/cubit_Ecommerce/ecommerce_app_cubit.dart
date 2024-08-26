@@ -4,7 +4,6 @@ import 'package:e_commerce_app/shared/dioHelper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
-
 part 'ecommerce_app_state.dart';
 
 class EcommerceAppCubit extends Cubit<EcommerceAppState> {
@@ -43,6 +42,5 @@ class EcommerceAppCubit extends Cubit<EcommerceAppState> {
       print("Error ========${e.toString()}");
     }
   }
-
 
 }

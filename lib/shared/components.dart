@@ -2,6 +2,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app/Cubit/cubit_newProduct/new_product_cubit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,34 +11,35 @@ import '../main.dart';
 import 'textStyle.dart';
 
 class customTextFormField extends StatelessWidget {
+  
+  
   customTextFormField({super.key, this.hintText = ""});
   String hintText;
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: SizedBox(
-      height: 48,
-      child: TextFormField(
-        decoration: InputDecoration(
-            suffixIcon: const Icon(
-              Icons.search,
-              size: 30,
-              color: Color(0xff868687),
-            ),
-            border: customBorderTextFormFeild(),
-            enabledBorder: customBorderTextFormFeild(),
-            filled: true,
-            fillColor: const Color(0xffF3F3F3),
-            focusedBorder: customBorderTextFormFeild(),
-            contentPadding: const EdgeInsetsDirectional.only(start: 16),
-            hintText: hintText,
-            hintStyle: const TextStyle(
-                fontSize: 20,
-                color: Color(0xff6E6E70),
-                fontWeight: FontWeight.w500)),
-      ),
-    ));
+    return SizedBox(
+          height: 48,
+          child: TextFormField(
+    decoration: InputDecoration(
+        suffixIcon: const Icon(
+          Icons.search,
+          size: 30,
+          color: Color(0xff868687),
+        ),
+        border: customBorderTextFormFeild(),
+        enabledBorder: customBorderTextFormFeild(),
+        filled: true,
+        fillColor: const Color(0xffF3F3F3),
+        focusedBorder: customBorderTextFormFeild(),
+        contentPadding: const EdgeInsetsDirectional.only(start: 16),
+        hintText: hintText,
+        hintStyle: const TextStyle(
+            fontSize: 20,
+            color: Color(0xff6E6E70),
+            fontWeight: FontWeight.w500)),
+          ),
+        );
   }
 
   OutlineInputBorder customBorderTextFormFeild() => OutlineInputBorder(
@@ -172,17 +174,14 @@ class customBannerSlider extends StatelessWidget {
               items: myCubit.banners.map((element) {
                 return AspectRatio(
                   aspectRatio: 310 / 170,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image(
-                      image: NetworkImage(element),
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image(
+                    image: NetworkImage(element),
+                    fit: BoxFit.cover,
                   ),
                 );
               }).toList(),
               options: CarouselOptions(
-                autoPlay: true,
+                autoPlay: false,
                 viewportFraction: 1,
               ),
             );

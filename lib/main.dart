@@ -2,13 +2,11 @@ import 'package:device_preview/device_preview.dart';
 import 'package:e_commerce_app/Cubit/cubit_Ecommerce/ecommerce_app_cubit.dart';
 import 'package:e_commerce_app/shared/dioHelper.dart';
 import 'package:flutter/foundation.dart';
-
-
 import './shared/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'shared/Routes.dart';
-
+  
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Diohelper.init();

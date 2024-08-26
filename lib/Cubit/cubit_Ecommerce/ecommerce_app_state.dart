@@ -11,7 +11,6 @@ class getCategotyLoadedState extends EcommerceAppState {}
 
 class getCategotyErrorState extends EcommerceAppState {}
 
-
 class getBannersLoadingState extends EcommerceAppState {}
 
 class getBannersLoadedState extends EcommerceAppState {}

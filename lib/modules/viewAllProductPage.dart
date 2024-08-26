@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/models/NavigatorTItleAndLIstProductModel.dart';
 import 'package:e_commerce_app/models/productModel.dart';
 import 'package:e_commerce_app/shared/Routes.dart';
@@ -65,14 +66,41 @@ class customItemViewProduct extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image(
-                  image: NetworkImage(model.image),
+            // to fixed height for image in place holder
+            // ClipRRect(
+            //     borderRadius: BorderRadius.circular(12),
+            //     child: Image(
+            //       image: NetworkImage(model.image),
+            //       fit: BoxFit.contain,
+            //       height: height,
+            //       width: width,
+            //     )),
+            Stack(
+              children: [
+                CachedNetworkImage(
+                  imageUrl: model.image,
                   fit: BoxFit.contain,
                   height: height,
                   width: width,
-                )),
+                  placeholder: (context, url) {
+                    return Container(
+                        color: height == null ? Colors.grey[200] : null,
+                        height: height == null ? 300 : null,
+                        child: height == 0
+                            ? const Center(
+                                child: CircularProgressIndicator(),
+                              )
+                            : null);
+                  },
+                ),
+                Align(
+                    alignment: AlignmentDirectional.topEnd,
+                    child: IconButton(
+                      icon: const Icon(Icons.favorite_border_sharp),
+                      onPressed: () {},
+                    ))
+              ],
+            ),
             const SizedBox(
               height: 5,
             ),
@@ -115,7 +143,24 @@ class customItemViewProduct extends StatelessWidget {
                                           decoration:
                                               TextDecoration.lineThrough),
                                 )
-                              : const SizedBox()
+                              : const SizedBox(),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 25,
+                              ),
+                              Text(
+                                //api has't reate number of product
+                                "4.7",
+                                style: textStyle.regular_14(context: context),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     )
